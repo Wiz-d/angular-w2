@@ -1,0 +1,30 @@
+@if(!isUserDone){
+    <div class="main">
+
+        <div class="book-collection">
+            <div class="title">{{BookCollection[index].title}}</div> 
+            <input [(ngModel)]="modelTitle" type="text" placeholder="Заглавие на книгата">
+            <div>{{BookCollection[index].description}}</div>
+            <input [(ngModel)]="modelDescription" type="text" placeholder="Описание на книгата">
+            <div>{{BookCollection[index].author}}</div>
+            <input [(ngModel)]="modelAuthor" type="text" placeholder="Автор на книгата">
+            <div>{{BookCollection[index].averageRating.toFixed(1)}}</div>
+        </div>
+    
+        <div clas="buttons">
+        <button (click)="buttonOne()">1</button>
+        <button (click)="buttonTwo()">2</button>
+        <button (click)="buttonThree()">3</button>
+        <button (click)="buttonFour()">4</button>
+        <button (click)="buttonFive()">5</button>
+        </div>
+        
+    </div>
+}
+@else {
+    <div class="end-screen">
+    Вие оценихте всички книги успешно
+    <button (click)="ReviewAgain()">Искам да ги оценя отново</button>
+    <button>Не ок съм</button>
+    </div>
+}
